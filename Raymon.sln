@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raymon.Framwork", "Raymon.F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raymon.Services", "Raymon.Services\Raymon.Services.csproj", "{1A2DCC69-0ABF-422E-B8AF-894E162F49F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raymon.WeatherMessageReceiver", "Raymon.WeatherMessageReceiver\Raymon.WeatherMessageReceiver.csproj", "{3FE32209-6614-4F60-A799-DF547C9AE32E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raymon.WeatherMessageReceiver", "Raymon.WeatherMessageReceiver\Raymon.WeatherMessageReceiver.csproj", "{3FE32209-6614-4F60-A799-DF547C9AE32E}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{957047FE-F335-48E4-B15D-E84142C5B695}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{3FE32209-6614-4F60-A799-DF547C9AE32E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FE32209-6614-4F60-A799-DF547C9AE32E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FE32209-6614-4F60-A799-DF547C9AE32E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{957047FE-F335-48E4-B15D-E84142C5B695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{957047FE-F335-48E4-B15D-E84142C5B695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{957047FE-F335-48E4-B15D-E84142C5B695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{957047FE-F335-48E4-B15D-E84142C5B695}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

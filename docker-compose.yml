@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  raymon.loginapi:
+    image: ${DOCKER_REGISTRY-}raymonloginapi
+    build:
+      context: .
+      dockerfile: Raymon.LoginApi/Dockerfile
+
+  raymon.registerapi:
+    image: ${DOCKER_REGISTRY-}raymonregisterapi
+    build:
+      context: .
+      dockerfile: Raymon.RegisterApi/Dockerfile
+
+
+  raymon.weatherapi:
+    image: ${DOCKER_REGISTRY-}raymonweatherapi
+    build:
+      context: .
+      dockerfile: Raymon.WeatherApi/Dockerfile
+
