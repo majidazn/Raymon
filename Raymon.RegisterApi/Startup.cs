@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Raymon.Common.Identity;
 using Raymon.Framwork.Configuration;
+using Raymon.Framwork.Extensions;
 using Raymon.Services.Register;
 
 namespace Raymon.RegisterApi
@@ -50,6 +49,7 @@ namespace Raymon.RegisterApi
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

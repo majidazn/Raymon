@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Raymon.Common\Raymon.Common.csproj" />
     <ProjectReference Include="..\Raymon.DataAccess\Raymon.DataAccess.csproj" />
   </ItemGroup>
