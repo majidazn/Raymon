@@ -24,10 +24,8 @@ namespace Raymon.RegisterApi
         {
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Raymon.RegisterApi", Version = "v1" });
-            });
+            services.SwaggerSetup();
+
 
             services.AddDbContextCustom(Configuration);
 
@@ -43,8 +41,8 @@ namespace Raymon.RegisterApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Raymon.RegisterApi v1"));
+              
+                app.UseSwaggerCustom();
             }
 
             app.UseRouting();

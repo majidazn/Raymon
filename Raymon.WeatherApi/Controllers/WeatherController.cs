@@ -37,7 +37,7 @@ namespace Raymon.WeatherApi.Controllers
 
 
         [HttpPost]
-        [AllowAnonymous]
+       
         public async Task<IActionResult> SendWeather([FromBody] SendWeatherDto sendWeatherDto)
         {
 

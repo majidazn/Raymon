@@ -28,10 +28,9 @@ namespace Raymon.WeatherApi
         {
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Raymon.WeatherApi", Version = "v1" });
-            });
+
+            services.SwaggerSetup();
+
             var rabbitConfig = Configuration.GetSection("Rabbit").GetChildren();
             var test = Configuration.GetConnectionString("DefaultConnection");
             //services.AddRabbit(Configuration);
@@ -58,12 +57,13 @@ namespace Raymon.WeatherApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Raymon.WeatherApi v1"));
+              
+                app.UseSwaggerCustom();
             }
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

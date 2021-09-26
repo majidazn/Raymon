@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Raymon.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace Raymon.Framwork.Extensions
     {
         public static void IdentitySetup(this IServiceCollection services)
         {
+
+            SymmetricSecurityKey IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(ConstantAthenticationData.TokenKey));
             services.AddAuthentication(options =>
             {
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -21,7 +24,7 @@ namespace Raymon.Framwork.Extensions
             })
                .AddJwtBearer(cfg =>
                {
-                   var tokenKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mbPeShVm6v9y_RaymonTokenKey125"));
+                   //var tokenKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mbPeShVm6v9y_RaymonTokenKey125"));
                    cfg.RequireHttpsMetadata = false;
                    cfg.SaveToken = true;
 
@@ -30,12 +33,13 @@ namespace Raymon.Framwork.Extensions
                        ValidIssuer = "http://localhost:7740/",
                        ValidAudience = "http://localhost:2658/",
 
-                       IssuerSigningKey = tokenKey,
+                       IssuerSigningKey = IssuerSigningKey,
                        ValidateIssuer = true,
                        ValidateAudience = true,
                        ValidateLifetime = true,
                        ValidateIssuerSigningKey = true,
-                       ClockSkew = TimeSpan.Zero
+                       ClockSkew = TimeSpan.Zero,
+                       
                        //   TokenDecryptionKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Encryption.PasswordKey))
                    };
 

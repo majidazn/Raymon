@@ -25,10 +25,8 @@ namespace Raymon.LoginApi
 
             services.AddControllers();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Raymon.LoginApi", Version = "v1" });
-            });
+            services.SwaggerSetup();
+
 
             services.AddDbContextCustom(Configuration);
 
@@ -44,14 +42,14 @@ namespace Raymon.LoginApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Raymon.LoginApi v1"));
+                app.UseSwaggerCustom();
             }
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
