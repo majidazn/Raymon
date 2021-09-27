@@ -54,8 +54,6 @@ namespace Raymon.Framwork.RabbitMq
                 channel.QueueDeclare(eventName, false, false, false, null);
 
 
-                // channel.ExchangeDeclare("exchange1", "direct", true);
-                //channel.QueueBind(eventName, "exchange1", "routingKey1");
 
                 var message = JsonConvert.SerializeObject(@event);
                 var body = Encoding.UTF8.GetBytes(message);

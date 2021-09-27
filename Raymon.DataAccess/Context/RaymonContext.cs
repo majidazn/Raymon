@@ -19,9 +19,6 @@ namespace Raymon.DataAccess.Context
 
         public DbSet<CityWeather> CityWeathers { get; set; }
         
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    base.OnModelCreating(builder);
-        //}
+  
     }
 }

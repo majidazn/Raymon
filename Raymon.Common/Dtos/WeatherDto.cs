@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Raymon.Common.Dtos
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
     public class Coord
     {
         public double lon { get; set; }

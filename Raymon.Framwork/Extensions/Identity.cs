@@ -24,7 +24,6 @@ namespace Raymon.Framwork.Extensions
             })
                .AddJwtBearer(cfg =>
                {
-                   //var tokenKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("mbPeShVm6v9y_RaymonTokenKey125"));
                    cfg.RequireHttpsMetadata = false;
                    cfg.SaveToken = true;
 
@@ -40,7 +39,6 @@ namespace Raymon.Framwork.Extensions
                        ValidateIssuerSigningKey = true,
                        ClockSkew = TimeSpan.Zero,
                        
-                       //   TokenDecryptionKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Encryption.PasswordKey))
                    };
 
                    cfg.Events = new JwtBearerEvents

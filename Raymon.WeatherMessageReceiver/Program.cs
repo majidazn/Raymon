@@ -71,12 +71,7 @@ namespace Raymon.WeatherMessageReceiver
         }
         private static void ConfigureServices(IServiceCollection serviceCollection)
         {
-            // Add logging
-            //serviceCollection.AddSingleton(LoggerFactory.Create(builder =>
-            //{
-            //    builder
-            //        .AddSerilog(dispose: true);
-            //}));
+           
 
             serviceCollection.AddLogging();
 
@@ -86,11 +81,8 @@ namespace Raymon.WeatherMessageReceiver
                 .AddJsonFile("appsettings.json", false)
                 .Build();
 
-            // Add access to generic IConfigurationRoot
             serviceCollection.AddSingleton<IConfigurationRoot>(configuration);
 
-            // Add app
-           // serviceCollection.AddTransient<App>();
         }
 
 
